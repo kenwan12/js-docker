@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: jsdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jsdocker
+  template:
+    metadata:
+      labels:
+        app: jsdocker 
+    spec:
+      containers:
+        - name: jsdocker 
+          image: kwanacr.azurecr.io/jsdocker
+          ports:
+          - containerPort: 8080
